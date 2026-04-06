@@ -1,0 +1,1229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UpSwing Digital — Case Studies & Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.bunny.net/css?family=cabinet-grotesk:400,500,600,700,800,900" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#1A2240;--navy-deep:#0F1629;--navy-mid:#162244;
+  --green:#2A6E3F;--green-mid:#318B4A;--green-neon:#48C96A;
+  --green-pale:#E5F5EB;--green-ultra:#F0FAF3;
+  --ink:#0D1117;--muted:#6B7688;--white:#ffffff;
+  --rule-dark:rgba(255,255,255,0.07);--rule-light:rgba(26,34,64,0.09);
+  --g:"Cabinet Grotesk",sans-serif;--p:"Poppins",sans-serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--p);background:#fff;color:var(--ink);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+
+/* ═══ NAV ═══ */
+nav{position:fixed;top:0;left:0;right:0;z-index:900;height:64px;padding:0 5vw;display:flex;align-items:center;justify-content:space-between;background:rgba(15,22,41,0.97);backdrop-filter:blur(20px);border-bottom:1px solid var(--rule-dark)}
+.nl{display:flex;align-items:center;gap:10px;text-decoration:none}
+.nb{width:32px;height:32px;border-radius:8px;background:linear-gradient(135deg,var(--green),var(--green-neon));display:flex;align-items:center;justify-content:center;font-family:var(--g);font-size:15px;font-weight:900;color:#fff;flex-shrink:0}
+.nn{font-family:var(--g);font-size:15px;font-weight:800;color:#fff;display:block;line-height:1.1}
+.ns{font-size:8px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--green-neon);display:block}
+.nav-links{display:flex;align-items:center;gap:18px}
+.nav-a{font-size:11px;font-weight:500;color:rgba(255,255,255,.4);text-decoration:none;transition:color .2s;white-space:nowrap;letter-spacing:.02em}
+.nav-a:hover{color:var(--green-neon)}
+.nav-cta{font-family:var(--g);font-size:12px;font-weight:700;color:var(--navy-deep);background:var(--green-neon);padding:8px 18px;border-radius:100px;text-decoration:none;white-space:nowrap;transition:opacity .2s}
+.nav-cta:hover{opacity:.85}
+.ham{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:6px}
+.ham span{display:block;width:22px;height:2px;background:rgba(255,255,255,.65);border-radius:2px;transition:all .3s}
+.ham.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.ham.open span:nth-child(2){opacity:0}
+.ham.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+.mob-menu{display:none;position:fixed;top:64px;left:0;right:0;z-index:899;background:rgba(10,16,32,.98);padding:20px 5vw 28px;flex-direction:column;backdrop-filter:blur(24px);border-bottom:1px solid var(--rule-dark)}
+.mob-menu.open{display:flex}
+.mob-a{padding:13px 0;font-size:14px;font-weight:600;color:rgba(255,255,255,.55);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.05);transition:color .2s}
+.mob-a:hover{color:var(--green-neon)}
+.mob-btns{margin-top:18px;display:flex;gap:8px;flex-wrap:wrap}
+.mob-btn{flex:1;min-width:120px;display:flex;align-items:center;justify-content:center;gap:7px;padding:12px 14px;border-radius:10px;font-family:var(--g);font-size:12px;font-weight:700;text-decoration:none;transition:opacity .2s}
+.mob-btn:hover{opacity:.85}
+
+/* ═══ HERO ═══ */
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:100px 5vw 80px;position:relative;overflow:hidden;background:var(--navy-deep)}
+/* animated grid */
+.hg{position:absolute;inset:-5%;width:110%;height:110%;
+  background-image:linear-gradient(rgba(72,201,106,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(72,201,106,.05) 1px,transparent 1px);
+  background-size:52px 52px;animation:gridDrift 22s linear infinite;pointer-events:none}
+/* diagonal lines */
+.hd{position:absolute;inset:0;pointer-events:none;
+  background-image:repeating-linear-gradient(45deg,rgba(72,201,106,.025) 0,rgba(72,201,106,.025) 1px,transparent 0,transparent 50%);
+  background-size:72px 72px;animation:diagDrift 30s linear infinite}
+@keyframes gridDrift{0%{transform:translate(0,0)}100%{transform:translate(52px,52px)}}
+@keyframes diagDrift{0%{background-position:0 0}100%{background-position:72px 72px}}
+/* mesh */
+.hm{position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(ellipse 80% 60% at 72% 18%,rgba(42,110,63,.30) 0%,transparent 55%),
+             radial-gradient(ellipse 55% 55% at 10% 85%,rgba(72,201,106,.12) 0%,transparent 50%),
+             radial-gradient(ellipse 45% 40% at 88% 78%,rgba(26,34,64,.9) 0%,transparent 55%);
+  animation:meshFloat 14s ease-in-out infinite alternate}
+@keyframes meshFloat{0%{opacity:1;transform:scale(1)}50%{opacity:.8;transform:scale(1.03) translate(-1%,1%)}100%{opacity:1;transform:scale(1.015) translate(1%,-1%)}}
+/* orbs */
+.orb{position:absolute;border-radius:50%;pointer-events:none}
+.o1{width:520px;height:520px;top:-180px;right:-80px;background:radial-gradient(circle,rgba(42,110,63,.26) 0%,transparent 65%);animation:orbA 9s ease-in-out infinite alternate}
+.o2{width:380px;height:380px;bottom:-140px;left:-60px;background:radial-gradient(circle,rgba(72,201,106,.10) 0%,transparent 65%);animation:orbA 13s ease-in-out infinite alternate-reverse}
+.o3{width:260px;height:260px;top:42%;left:42%;background:radial-gradient(circle,rgba(42,110,63,.07) 0%,transparent 65%);animation:orbA 18s ease-in-out infinite alternate}
+@keyframes orbA{0%{transform:scale(1) translateY(0)}100%{transform:scale(1.14) translateY(-22px)}}
+/* noise */
+.hn{position:absolute;inset:0;opacity:.02;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:180px;animation:noiseS 7s steps(1) infinite}
+@keyframes noiseS{0%{background-position:0 0}25%{background-position:40px 20px}50%{background-position:80px 40px}75%{background-position:20px 80px}}
+.hero::after{content:"";position:absolute;bottom:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,transparent 5%,var(--green) 30%,var(--green-neon) 50%,var(--green) 70%,transparent 95%);
+  animation:lineGlow 3.5s ease-in-out infinite alternate}
+@keyframes lineGlow{0%{opacity:.5;transform:scaleX(.88)}100%{opacity:1;transform:scaleX(1)}}
+
+.hi{position:relative;z-index:2;max-width:920px}
+.hero-eye{display:inline-flex;align-items:center;gap:12px;font-size:10px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--green-neon);margin-bottom:24px;animation:fadeUp .7s ease both}
+.hero-eye::before{content:"";width:28px;height:1px;background:var(--green-neon);animation:lineExp .9s .3s ease both}
+@keyframes lineExp{from{width:0}to{width:28px}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
+.hero-h1{font-family:var(--g);font-size:clamp(42px,7.2vw,96px);font-weight:900;line-height:.92;letter-spacing:-.045em;margin-bottom:26px;animation:fadeUp .8s .07s ease both}
+.hero-h1 .dim{display:block;color:rgba(255,255,255,.18)}
+.hero-h1 .bright{display:block;color:#fff}
+.hero-h1 .accent{display:block;color:var(--green-neon);font-family:var(--p);font-weight:300;font-size:.48em;letter-spacing:-.01em;margin-top:14px;animation:fadeUp .8s .18s ease both}
+.hero-p{font-size:clamp(14px,1.7vw,17px);font-weight:300;color:rgba(255,255,255,.38);max-width:560px;line-height:1.9;margin-bottom:36px;animation:fadeUp .8s .14s ease both}
+.hero-p strong{color:rgba(255,255,255,.65);font-weight:500}
+
+/* hero connect */
+.hc{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:44px;animation:fadeUp .8s .2s ease both}
+.hc-btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:100px;font-family:var(--g);font-size:12px;font-weight:700;text-decoration:none;transition:transform .2s,box-shadow .2s;white-space:nowrap}
+.hc-btn:hover{transform:translateY(-2px)}
+.hc-wa{background:#25D366;color:#fff}.hc-wa:hover{box-shadow:0 8px 28px rgba(37,211,102,.38)}
+.hc-call{background:var(--green-neon);color:var(--navy-deep)}.hc-call:hover{box-shadow:0 8px 28px rgba(72,201,106,.38)}
+.hc-mail{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);color:#fff}.hc-mail:hover{background:rgba(255,255,255,.14)}
+.hc-web{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);color:#fff}.hc-web:hover{background:rgba(255,255,255,.14)}
+
+/* hero stats */
+.hs{display:flex;flex-wrap:wrap;gap:0;border-top:1px solid rgba(255,255,255,.08);padding-top:32px;animation:fadeUp .8s .28s ease both}
+.hst{padding:0 34px 0 0;margin-right:34px;border-right:1px solid rgba(255,255,255,.08)}
+.hst:last-child{border-right:none;padding-right:0;margin-right:0}
+.hst-n{font-family:var(--g);font-size:clamp(28px,3.5vw,42px);font-weight:900;color:var(--green-neon);line-height:1;margin-bottom:4px}
+.hst-l{font-size:9px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.24)}
+
+/* ═══ PROOF SCROLL ═══ */
+.pscroll{background:#fff;border-bottom:1px solid var(--rule-light);overflow:hidden;position:relative}
+.pscroll::before,.pscroll::after{content:"";position:absolute;top:0;bottom:0;width:80px;z-index:2;pointer-events:none}
+.pscroll::before{left:0;background:linear-gradient(90deg,#fff,transparent)}
+.pscroll::after{right:0;background:linear-gradient(-90deg,#fff,transparent)}
+.pt{display:flex;animation:mqS 30s linear infinite;width:max-content}
+.pt:hover{animation-play-state:paused}
+@keyframes mqS{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.pi{display:flex;align-items:center;gap:10px;padding:16px 30px;border-right:1px solid var(--rule-light);flex-shrink:0;white-space:nowrap}
+.pi-dot{width:5px;height:5px;border-radius:50%;background:var(--green-neon);flex-shrink:0}
+.pi-t{font-family:var(--g);font-size:11px;font-weight:800;color:rgba(13,17,23,.36);letter-spacing:.02em}
+
+/* ═══ GOOGLE STRIP ═══ */
+.gstrip{background:var(--navy);padding:22px 5vw;text-align:center;border-bottom:1px solid rgba(255,255,255,.06)}
+.gstrip-inner{max-width:900px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap}
+.gstrip-stars{display:flex;gap:3px}
+.gstrip-star{width:16px;height:16px;fill:#FBBC04}
+.gstrip-text{font-family:var(--g);font-size:15px;font-weight:700;color:rgba(255,255,255,.72);letter-spacing:-.01em}
+.gstrip-text em{color:var(--green-neon);font-style:normal}
+.gstrip-link{font-family:var(--g);font-size:11px;font-weight:700;color:var(--green-neon);text-decoration:none;border:1px solid rgba(72,201,106,.3);border-radius:100px;padding:5px 14px;white-space:nowrap;transition:background .2s}
+.gstrip-link:hover{background:rgba(72,201,106,.12)}
+
+/* ═══ TRUST BADGES ═══ */
+.trust{padding:64px 5vw 56px;background:#fff;position:relative;overflow:hidden}
+.trust::before{content:"";position:absolute;inset:0;background-image:radial-gradient(circle,rgba(42,110,63,.05) 1px,transparent 1px);background-size:30px 30px;pointer-events:none}
+.trust-inner{max-width:1200px;margin:0 auto;position:relative;z-index:1}
+.sec-eye{font-size:9px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--green);text-align:center;margin-bottom:28px;display:flex;align-items:center;justify-content:center;gap:12px}
+.sec-eye::before,.sec-eye::after{content:"";width:22px;height:1px;background:var(--green)}
+.trust-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
+.tc{background:var(--green-ultra);border:1px solid rgba(42,110,63,.1);border-radius:14px;padding:22px 14px;text-align:center;transition:transform .22s,box-shadow .22s;cursor:default}
+.tc:hover{transform:translateY(-4px);box-shadow:0 10px 32px rgba(42,110,63,.14)}
+.tc-n{font-family:var(--g);font-size:24px;font-weight:900;color:var(--green);line-height:1;margin-bottom:5px}
+.tc-l{font-size:9px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);line-height:1.45}
+.tc-icon{margin-bottom:8px}
+.tc-icon svg{width:22px;height:22px;stroke:var(--green);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+
+/* ═══ DEPT SECTION ═══ */
+.depts{padding:72px 5vw 0;background:#fff;position:relative;overflow:hidden}
+.depts::before{content:"";position:absolute;inset:0;background-image:radial-gradient(circle,rgba(42,110,63,.04) 1px,transparent 1px);background-size:30px 30px;pointer-events:none}
+.depts-inner{max-width:1200px;margin:0 auto;position:relative;z-index:1}
+.depts-h{text-align:center;margin-bottom:56px}
+.depts-h h2{font-family:var(--g);font-size:clamp(28px,4vw,50px);font-weight:900;letter-spacing:-.04em;color:var(--navy);line-height:1;margin-bottom:10px}
+.depts-h h2 em{color:var(--green);font-style:normal}
+.depts-h p{font-size:15px;font-weight:300;color:var(--muted);max-width:520px;margin:0 auto;line-height:1.8}
+.dept-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:18px}
+.dept-grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.dept-card{background:var(--navy-deep);border-radius:18px;overflow:hidden;position:relative;cursor:pointer;transition:transform .25s,box-shadow .25s;text-decoration:none;display:block}
+.dept-card:hover{transform:translateY(-6px);box-shadow:0 20px 56px rgba(15,22,41,.3)}
+/* card bg anim */
+.dc-bg{position:absolute;inset:0;pointer-events:none}
+.dc-grid{position:absolute;inset:-5%;width:110%;height:110%;
+  background-image:linear-gradient(rgba(72,201,106,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(72,201,106,.04) 1px,transparent 1px);
+  background-size:36px 36px;animation:gridDrift 24s linear infinite}
+.dc-orb1{position:absolute;top:-60px;right:-60px;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,rgba(42,110,63,.22) 0%,transparent 65%);animation:orbA 10s ease-in-out infinite alternate}
+.dc-orb2{position:absolute;bottom:-60px;left:-40px;width:180px;height:180px;border-radius:50%;background:radial-gradient(circle,rgba(72,201,106,.08) 0%,transparent 65%);animation:orbA 14s ease-in-out infinite alternate-reverse}
+.dc-inner{position:relative;z-index:1;padding:28px 26px 24px}
+.dc-label{font-size:9px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--green-neon);margin-bottom:14px;display:flex;align-items:center;gap:9px}
+.dc-label::before{content:"";width:20px;height:1px;background:var(--green-neon)}
+.dc-h{font-family:var(--g);font-size:clamp(18px,2.2vw,24px);font-weight:900;color:#fff;letter-spacing:-.03em;line-height:1.1;margin-bottom:10px}
+.dc-h em{color:var(--green-neon);font-style:normal}
+.dc-p{font-size:12px;font-weight:300;color:rgba(255,255,255,.38);line-height:1.72;margin-bottom:18px}
+.dc-stats{display:flex;gap:0;border-top:1px solid rgba(255,255,255,.07);padding-top:16px;margin-bottom:18px}
+.dcs{flex:1;text-align:center;border-right:1px solid rgba(255,255,255,.07)}
+.dcs:last-child{border-right:none}
+.dcs-n{font-family:var(--g);font-size:18px;font-weight:900;color:var(--green-neon);line-height:1;margin-bottom:3px}
+.dcs-l{font-size:8px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.24)}
+.dc-cta{display:inline-flex;align-items:center;gap:8px;font-family:var(--g);font-size:11px;font-weight:700;color:var(--green-neon);border:1px solid rgba(72,201,106,.25);border-radius:100px;padding:8px 16px;transition:all .2s}
+.dept-card:hover .dc-cta{background:rgba(72,201,106,.12);border-color:rgba(72,201,106,.5)}
+.dc-cta svg{width:12px;height:12px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;transition:transform .2s}
+.dept-card:hover .dc-cta svg{transform:translateX(3px)}
+/* soc media card */
+.dept-card-soc{border:1px dashed rgba(255,255,255,.2)}
+.dept-card-soc .dc-cta{color:rgba(255,165,0,.8);border-color:rgba(255,165,0,.25)}
+.dept-card-soc:hover .dc-cta{background:rgba(255,165,0,.08);border-color:rgba(255,165,0,.5)}
+
+/* ═══ CLIENTS STRIP ═══ */
+.clients{padding:56px 5vw;background:var(--green-ultra);border-top:1px solid rgba(42,110,63,.1);border-bottom:1px solid rgba(42,110,63,.1)}
+.clients-inner{max-width:1200px;margin:0 auto}
+.clients h3{font-family:var(--g);font-size:clamp(18px,2.5vw,26px);font-weight:900;color:var(--navy);letter-spacing:-.03em;margin-bottom:20px;text-align:center}
+.clients h3 em{color:var(--green);font-style:normal}
+.ctags{display:flex;flex-wrap:wrap;justify-content:center;gap:7px}
+.ctag{background:#fff;border:1px solid rgba(42,110,63,.12);border-radius:100px;padding:7px 16px;font-family:var(--g);font-size:11px;font-weight:700;color:rgba(26,34,64,.5);white-space:nowrap;transition:all .2s}
+.ctag:hover{background:var(--green-pale);color:var(--green);border-color:rgba(42,110,63,.3)}
+
+/* ═══ MARQUEE (client ticker) ═══ */
+.marquee{background:var(--navy);overflow:hidden;position:relative;padding:0}
+.marquee::before,.marquee::after{content:"";position:absolute;top:0;bottom:0;width:80px;z-index:2;pointer-events:none}
+.marquee::before{left:0;background:linear-gradient(90deg,var(--navy),transparent)}
+.marquee::after{right:0;background:linear-gradient(-90deg,var(--navy),transparent)}
+.mq-t{display:flex;width:max-content;animation:mqS 38s linear infinite}
+.mq-t:hover{animation-play-state:paused}
+.mq-i{display:flex;align-items:center;gap:10px;padding:15px 28px;border-right:1px solid rgba(255,255,255,.06);flex-shrink:0;white-space:nowrap;font-family:var(--g);font-size:12px;font-weight:700;color:rgba(255,255,255,.55);letter-spacing:-.01em}
+.mq-sep{color:var(--green-neon);font-size:10px;margin:0 2px}
+
+/* ═══ TESTIMONIALS ═══ */
+.testi-sec{padding:80px 5vw;background:#fff;position:relative;overflow:hidden}
+.testi-sec::before{content:"";position:absolute;inset:0;background-image:radial-gradient(circle,rgba(42,110,63,.04) 1px,transparent 1px);background-size:28px 28px;pointer-events:none}
+.testi-inner{max-width:1200px;margin:0 auto;position:relative;z-index:1}
+.testi-hdr{text-align:center;margin-bottom:48px}
+.testi-hdr h2{font-family:var(--g);font-size:clamp(24px,3.5vw,42px);font-weight:900;letter-spacing:-.035em;color:var(--navy);margin-bottom:8px}
+.testi-hdr h2 em{color:var(--green);font-style:normal}
+.testi-hdr p{font-size:14px;font-weight:300;color:var(--muted)}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.tcard{background:var(--navy);border-radius:16px;padding:28px 24px;position:relative;overflow:hidden}
+.tcard::before{content:'"';position:absolute;top:8px;left:14px;font-family:var(--g);font-size:96px;font-weight:900;color:var(--green-neon);opacity:.06;line-height:1;pointer-events:none}
+.tcard-stars{display:flex;gap:2px;margin-bottom:12px}
+.tcard-star{width:12px;height:12px;fill:#FBBC04}
+.tcard-text{font-size:13px;font-weight:300;font-style:italic;color:rgba(255,255,255,.72);line-height:1.75;margin-bottom:16px;position:relative;z-index:1}
+.tcard-attr{font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--green-neon);display:flex;align-items:center;gap:8px}
+.tcard-attr::before{content:"";width:14px;height:1px;background:var(--green-neon)}
+
+/* ═══ WEBSITE CTA STRIP ═══ */
+.web-strip{background:linear-gradient(135deg,var(--navy-mid),var(--navy-deep));padding:36px 5vw;border-top:1px solid rgba(255,255,255,.07);border-bottom:1px solid rgba(255,255,255,.07)}
+.web-strip-inner{max-width:1000px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.web-strip-l{font-family:var(--g);font-size:clamp(16px,2.2vw,22px);font-weight:800;color:#fff;letter-spacing:-.02em}
+.web-strip-l span{color:var(--green-neon)}
+.web-strip-btn{display:inline-flex;align-items:center;gap:9px;background:var(--green-neon);color:var(--navy-deep);font-family:var(--g);font-size:13px;font-weight:800;padding:13px 28px;border-radius:100px;text-decoration:none;transition:all .2s;white-space:nowrap}
+.web-strip-btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(72,201,106,.38)}
+.web-strip-btn svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+
+/* ═══ CONNECT ═══ */
+.connect{padding:80px 5vw;background:var(--green-ultra);border-top:1px solid rgba(42,110,63,.12)}
+.connect-inner{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.cl .c-eye{font-size:9px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:var(--green);margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.cl .c-eye::before{content:"";width:18px;height:1px;background:var(--green)}
+.cl h2{font-family:var(--g);font-size:clamp(26px,3.5vw,42px);font-weight:900;letter-spacing:-.035em;color:var(--navy);line-height:1;margin-bottom:12px}
+.cl h2 em{color:var(--green);font-style:normal}
+.cl p{font-size:14px;font-weight:300;color:var(--muted);line-height:1.82}
+.cr{display:flex;flex-direction:column;gap:11px}
+.con-btn{display:flex;align-items:center;gap:12px;padding:15px 20px;border-radius:14px;text-decoration:none;background:#fff;border:1px solid var(--rule-light);transition:all .22s}
+.con-btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(42,110,63,.14);border-color:rgba(42,110,63,.25)}
+.con-ico{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.con-ico svg{width:18px;height:18px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.con-wa-ico{background:#25D366}
+.con-ph-ico{background:var(--green)}
+.con-em-ico{background:var(--green)}
+.con-body{min-width:0}
+.con-lbl{font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:2px}
+.con-val{font-family:var(--g);font-size:14px;font-weight:800;color:var(--navy);word-break:break-all}
+.con-sub{font-size:10px;color:var(--muted);margin-top:1px}
+.con-arr{margin-left:auto;flex-shrink:0}
+.con-arr svg{width:14px;height:14px;stroke:var(--muted);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;transition:all .2s}
+.con-btn:hover .con-arr svg{stroke:var(--green);transform:translateX(3px)}
+
+/* ═══ FAQ ═══ */
+.faq{padding:80px 5vw;background:#fff;position:relative;overflow:hidden}
+.faq::before{content:"";position:absolute;inset:0;background-image:radial-gradient(circle,rgba(42,110,63,.04) 1px,transparent 1px);background-size:28px 28px;pointer-events:none}
+.faq-inner{max-width:800px;margin:0 auto;position:relative;z-index:1}
+.faq-hdr{text-align:center;margin-bottom:48px}
+.faq-hdr h2{font-family:var(--g);font-size:clamp(24px,3.8vw,44px);font-weight:900;letter-spacing:-.035em;color:var(--navy);margin-bottom:8px}
+.faq-hdr h2 em{color:var(--green);font-style:normal}
+.faq-hdr p{font-size:14px;font-weight:300;color:var(--muted);line-height:1.8}
+details.fi{border-bottom:1px solid var(--rule-light)}
+details.fi:first-of-type{border-top:1px solid var(--rule-light)}
+summary.fq{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:20px 0;cursor:pointer;list-style:none}
+summary.fq::-webkit-details-marker{display:none}
+.fq-t{font-family:var(--g);font-size:14px;font-weight:700;color:var(--navy);letter-spacing:-.02em;line-height:1.3;transition:color .2s}
+details[open] .fq-t{color:var(--green)}
+.fq-ico{width:24px;height:24px;border-radius:50%;border:1px solid rgba(42,110,63,.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .2s}
+.fq-ico svg{width:10px;height:10px;stroke:var(--muted);fill:none;stroke-width:2.2;stroke-linecap:round;transition:transform .28s}
+details[open] .fq-ico{background:var(--green);border-color:var(--green)}
+details[open] .fq-ico svg{stroke:#fff;transform:rotate(45deg)}
+.fa{padding:0 0 20px;font-size:13px;font-weight:300;color:var(--muted);line-height:1.88}
+.fa strong{color:var(--navy);font-weight:500}
+
+/* ═══ CTA BAND ═══ */
+.cta-band{padding:88px 5vw;background:var(--navy-deep);text-align:center;position:relative;overflow:hidden}
+.cta-band::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 65% 65% at 50% 50%,rgba(42,110,63,.20) 0%,transparent 65%);pointer-events:none}
+.cta-band::after{content:"";position:absolute;inset:0;background-image:radial-gradient(circle,rgba(72,201,106,.05) 1px,transparent 1px);background-size:30px 30px;pointer-events:none;animation:gridDrift 26s linear infinite}
+.cta-inner{position:relative;z-index:1}
+.cta-band h2{font-family:var(--g);font-size:clamp(30px,5vw,64px);font-weight:900;letter-spacing:-.04em;line-height:.95;color:#fff;margin-bottom:16px}
+.cta-band h2 em{color:var(--green-neon);font-style:normal}
+.cta-band p{font-size:15px;font-weight:300;color:rgba(255,255,255,.35);max-width:380px;margin:0 auto 40px;line-height:1.82}
+.cta-btns{display:flex;align-items:center;justify-content:center;gap:11px;flex-wrap:wrap}
+.btn-pr{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--green-mid),var(--green-neon));color:var(--navy-deep);font-family:var(--g);font-size:13px;font-weight:900;padding:14px 32px;border-radius:100px;text-decoration:none;transition:all .2s}
+.btn-pr:hover{transform:translateY(-3px);box-shadow:0 14px 44px rgba(72,201,106,.36)}
+.btn-sc{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);color:#fff;font-family:var(--g);font-size:13px;font-weight:700;padding:14px 28px;border-radius:100px;text-decoration:none;transition:all .2s}
+.btn-sc:hover{background:rgba(255,255,255,.12)}
+
+/* ═══ FOOTER ═══ */
+footer{background:#050A12;padding:36px 5vw;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;border-top:1px solid rgba(255,255,255,.05)}
+.fl{display:flex;align-items:center;gap:9px}
+.fl-b{width:28px;height:28px;border-radius:7px;background:linear-gradient(135deg,var(--green),var(--green-neon));display:flex;align-items:center;justify-content:center;font-family:var(--g);font-size:13px;font-weight:900;color:#fff}
+.fl-n{font-family:var(--g);font-size:13px;font-weight:800;color:#fff}
+.fl-s{font-size:9px;color:rgba(255,255,255,.2);display:block;margin-top:1px}
+.fr{text-align:right}
+.fr-c{font-size:10px;color:rgba(255,255,255,.18)}
+.fr-t{font-size:11px;font-weight:600;color:var(--green-neon);margin-top:3px}
+
+/* ═══ MODAL ═══ */
+.modal-ov{display:none;position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,.82);backdrop-filter:blur(10px);align-items:center;justify-content:center;padding:20px}
+.modal-ov.open{display:flex}
+.modal-box{background:var(--navy);border:1px solid rgba(255,165,0,.25);border-radius:20px;padding:36px 32px;max-width:420px;width:100%;text-align:center;position:relative;animation:modalIn .3s cubic-bezier(.22,1,.36,1) both}
+@keyframes modalIn{from{opacity:0;transform:scale(.9) translateY(18px)}to{opacity:1;transform:scale(1) translateY(0)}}
+.modal-close{position:absolute;top:14px;right:14px;width:30px;height:30px;border-radius:50%;background:rgba(255,255,255,.07);border:none;cursor:pointer;color:rgba(255,255,255,.45);font-size:15px;display:flex;align-items:center;justify-content:center;transition:background .2s}
+.modal-close:hover{background:rgba(255,255,255,.15)}
+.modal-bar{height:3px;border-radius:100px;background:linear-gradient(90deg,rgba(255,165,0,.2),rgba(255,165,0,.9),rgba(255,165,0,.2));margin-bottom:20px;animation:barPulse 1.4s ease-in-out infinite}
+@keyframes barPulse{0%,100%{transform:scaleX(.3);opacity:.5}50%{transform:scaleX(1);opacity:1}}
+.modal-icon{width:52px;height:52px;border-radius:50%;background:rgba(255,165,0,.12);display:flex;align-items:center;justify-content:center;margin:0 auto 14px;border:1px solid rgba(255,165,0,.25)}
+.modal-icon svg{width:22px;height:22px;stroke:rgba(255,165,0,.85);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.modal-h{font-family:var(--g);font-size:20px;font-weight:900;color:#fff;margin-bottom:8px;letter-spacing:-.02em}
+.modal-p{font-size:13px;font-weight:300;color:rgba(255,255,255,.45);line-height:1.78;margin-bottom:24px}
+.modal-p strong{color:rgba(255,165,0,.85);font-weight:600}
+.modal-btns{display:flex;gap:9px;flex-wrap:wrap;justify-content:center}
+.modal-btn{display:inline-flex;align-items:center;gap:7px;padding:11px 20px;border-radius:100px;font-family:var(--g);font-size:12px;font-weight:700;text-decoration:none;transition:opacity .2s}
+.modal-btn:hover{opacity:.85}
+.mb-wa{background:#25D366;color:#fff}
+.mb-mail{background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.15);color:#fff}
+
+/* ═══ REVEAL ═══ */
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease}
+.reveal.in{opacity:1;transform:translateY(0)}
+.rd1{transition-delay:.06s}.rd2{transition-delay:.12s}.rd3{transition-delay:.18s}
+
+/* ═══ RESPONSIVE ═══ */
+@media(max-width:900px){
+  .nav-links{display:none}.ham{display:flex}
+  .dept-grid,.dept-grid-2{grid-template-columns:1fr 1fr}
+  .trust-grid{grid-template-columns:repeat(3,1fr)}
+  .connect-inner{grid-template-columns:1fr;gap:36px}
+  .testi-grid{grid-template-columns:1fr 1fr}
+  .fr{text-align:left}
+  .hs{gap:18px}.hst{border-right:none;padding-right:0;margin-right:0}
+}
+@media(max-width:640px){
+  .dept-grid,.dept-grid-2{grid-template-columns:1fr}
+  .trust-grid{grid-template-columns:repeat(2,1fr)}
+  .testi-grid{grid-template-columns:1fr}
+  .hc{flex-direction:column}
+  .hc-btn{justify-content:center}
+  .web-strip-inner{flex-direction:column;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nl">
+    <div class="nb">U</div>
+    <div><span class="nn">UpSwing Digital</span><span class="ns">Innovation &middot; Connectivity &middot; Development</span></div>
+  </a>
+  <div class="nav-links">
+    <a href="#departments" class="nav-a">Departments</a>
+    <a href="#clients" class="nav-a">Clients</a>
+    <a href="#testimonials" class="nav-a">Testimonials</a>
+    <a href="#faq" class="nav-a">FAQs</a>
+    <a href="#connect" class="nav-a">Contact</a>
+    <a href="https://upswingdigital.in" target="_blank" rel="noopener" class="nav-a">Website</a>
+    <a href="#connect" class="nav-cta">Work With Us</a>
+  </div>
+  <button class="ham" id="ham" aria-label="Menu" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mob-menu" id="mobMenu">
+  <a href="#departments" class="mob-a" onclick="closeMenu()">Departments</a>
+  <a href="#clients" class="mob-a" onclick="closeMenu()">Clients</a>
+  <a href="#testimonials" class="mob-a" onclick="closeMenu()">Testimonials</a>
+  <a href="#faq" class="mob-a" onclick="closeMenu()">FAQs</a>
+  <a href="https://upswingdigital.in" target="_blank" rel="noopener" class="mob-a" onclick="closeMenu()">Visit Our Website</a>
+  <div class="mob-btns">
+    <a href="https://wa.me/918089539154" class="mob-btn" style="background:#25D366;color:#fff">WhatsApp</a>
+    <a href="tel:+918138009154" class="mob-btn" style="background:var(--green-neon);color:var(--navy-deep)">Call Us</a>
+    <a href="mailto:hello@upswingdigital.in" class="mob-btn" style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:#fff">Email</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hg"></div><div class="hd"></div><div class="hm"></div>
+  <div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div>
+  <div class="hn"></div>
+  <div class="hi">
+    <div class="hero-eye">UpSwing Digital &mdash; Case Studies</div>
+    <h1 class="hero-h1">
+      <span class="dim">Work That</span>
+      <span class="bright">Moves the Needle.</span>
+      <span class="accent">55 case studies across 5 departments. Real briefs. Real results. No filler.</span>
+    </h1>
+    <p class="hero-p">
+      We are a <strong>full-service content and digital agency</strong> based in Kochi, ranked #1 on Google, trusted by 750+ clients across India, UAE, and the UK. Every project in this portfolio is a documented story of <strong>strategy applied, execution delivered, and results measured.</strong>
+    </p>
+    <div class="hc">
+      <a href="https://wa.me/918089539154" class="hc-btn hc-wa">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.555 4.123 1.522 5.855L0 24l6.305-1.507A11.946 11.946 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.81 9.81 0 01-5.007-1.374l-.36-.214-3.732.892.933-3.623-.234-.373A9.818 9.818 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
+        WhatsApp Us
+      </a>
+      <a href="tel:+918138009154" class="hc-btn hc-call">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10a2 2 0 012-2.18h3"/><polyline points="16 2 22 2 22 8"/><line x1="22" y1="2" x2="15" y2="9"/></svg>
+        +91 81380 09154
+      </a>
+      <a href="mailto:hello@upswingdigital.in" class="hc-btn hc-mail">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
+        hello@upswingdigital.in
+      </a>
+      <a href="https://upswingdigital.in" target="_blank" rel="noopener" class="hc-btn hc-web">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+        Visit Our Website
+      </a>
+    </div>
+    <div class="hs">
+      <div class="hst"><div class="hst-n">55</div><div class="hst-l">Case Studies</div></div>
+      <div class="hst"><div class="hst-n">750+</div><div class="hst-l">Clients Served</div></div>
+      <div class="hst"><div class="hst-n">48+</div><div class="hst-l">In-House Team</div></div>
+      <div class="hst"><div class="hst-n">50Cr+</div><div class="hst-l">Revenue Driven</div></div>
+      <div class="hst"><div class="hst-n">6+</div><div class="hst-l">Years</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- BRAND SCROLL -->
+<div class="pscroll reveal">
+  <div class="pt">
+    <div class="pi"><div class="pi-dot"></div><span class="pi-t">Kerala Literature Festival</span></div>
+    <div class="pi"><div class="pi-dot"></div><span class="pi-t">Filmfare Awards 2026</span></div>
+    <div class="pi"><div class="pi-dot"></div><span class="pi-t">Indian Navy</span></div>
+    <div class="pi"><div class="pi-dot"></div><span class="pi-t">South Indian Bank</span></div>
+    <div class="pi"><div class="pi-dot"></div><span class="pi-t">Flipkart</span></div>
+    <div class="pi"><div class="pi-dot"></div><span class="pi-t">Purplle</span></div>
+    <div class="pi"><div class="pi-dot"></div><span class="pi-t">Wonderla</span></div>
+    <div class="pi"><div class="pi-dot"></div><span class="pi-t">DC Books</span></div>
+    <div class="pi"><div class="pi-dot"></div><span class="pi-t">Quaker Oats</span></div>
+    <div class="pi"><div class="pi-dot"></div><span class="pi-t">Faces Canada</span></div>
+    <div class="pi"><div class="pi-dot"></div><span class="pi-t">Asset Homes</span></div>
+    <div class="pi"><div class="pi-dot"></div><span class="pi-t">Forum Mall</span></div>
+    <div class="pi"><div class="pi-dot"></div><span class="pi-t">Hamleys</span></div>
+    <div class="pi"><div class="pi-dot"></div><span class="pi-t">Bacardi</span></div>
+    <div class="pi"><div class="pi-dot"></div><span class="pi-t">OPPO Kerala</span></div>
+    <div class="pi"><div class="pi-dot"></div><span class="pi-t">Magnum Opus UAE</span></div>
+    <div class="pi"><div class="pi-dot"></div><span class="pi-t">Mastercare UK</span></div>
+    <div class="pi"><div class="pi-dot"></div><span class="pi-t">BiZcult London</span></div>
+    <!-- duplicate -->
+    <div class="pi"><div class="pi-dot"></div><span class="pi-t">Kerala Literature Festival</span></div>
+    <div class="pi"><div class="pi-dot"></div><span class="pi-t">Filmfare Awards 2026</span></div>
+    <div class="pi"><div class="pi-dot"></div><span class="pi-t">Indian Navy</span></div>
+    <div class="pi"><div class="pi-dot"></div><span class="pi-t">South Indian Bank</span></div>
+    <div class="pi"><div class="pi-dot"></div><span class="pi-t">Flipkart</span></div>
+    <div class="pi"><div class="pi-dot"></div><span class="pi-t">Purplle</span></div>
+    <div class="pi"><div class="pi-dot"></div><span class="pi-t">Wonderla</span></div>
+    <div class="pi"><div class="pi-dot"></div><span class="pi-t">DC Books</span></div>
+    <div class="pi"><div class="pi-dot"></div><span class="pi-t">Quaker Oats</span></div>
+    <div class="pi"><div class="pi-dot"></div><span class="pi-t">Faces Canada</span></div>
+    <div class="pi"><div class="pi-dot"></div><span class="pi-t">Asset Homes</span></div>
+    <div class="pi"><div class="pi-dot"></div><span class="pi-t">Forum Mall</span></div>
+    <div class="pi"><div class="pi-dot"></div><span class="pi-t">Hamleys</span></div>
+    <div class="pi"><div class="pi-dot"></div><span class="pi-t">Bacardi</span></div>
+    <div class="pi"><div class="pi-dot"></div><span class="pi-t">OPPO Kerala</span></div>
+    <div class="pi"><div class="pi-dot"></div><span class="pi-t">Magnum Opus UAE</span></div>
+    <div class="pi"><div class="pi-dot"></div><span class="pi-t">Mastercare UK</span></div>
+    <div class="pi"><div class="pi-dot"></div><span class="pi-t">BiZcult London</span></div>
+  </div>
+</div>
+
+<!-- GOOGLE STRIP -->
+<div class="gstrip reveal">
+  <div class="gstrip-inner">
+    <div class="gstrip-stars">
+      <svg class="gstrip-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      <svg class="gstrip-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      <svg class="gstrip-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      <svg class="gstrip-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      <svg class="gstrip-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+    </div>
+    <div class="gstrip-text">We are the <em>top-ranked marketing agency on Google in Kochi.</em> Check for yourself.</div>
+    <a href="https://maps.app.goo.gl/p9WmgXgkPpvhFZQqy" target="_blank" rel="noopener" class="gstrip-link">See Our Reviews</a>
+  </div>
+</div>
+
+<!-- TRUST BADGES -->
+<div class="trust reveal" id="trust">
+  <div class="trust-inner">
+    <div class="sec-eye">Why UpSwing</div>
+    <div class="trust-grid">
+      <div class="tc">
+        <div class="tc-icon"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+        <div class="tc-n">#1</div><div class="tc-l">Best Agency in Kochi</div>
+      </div>
+      <div class="tc">
+        <div class="tc-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+        <div class="tc-n">5.0</div><div class="tc-l">Highest Google Rating</div>
+      </div>
+      <div class="tc">
+        <div class="tc-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
+        <div class="tc-n">48+</div><div class="tc-l">In-House Team Members</div>
+      </div>
+      <div class="tc">
+        <div class="tc-icon"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+        <div class="tc-n">750+</div><div class="tc-l">Clients Served</div>
+      </div>
+      <div class="tc">
+        <div class="tc-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+        <div class="tc-n">Full</div><div class="tc-l">In-House Infrastructure</div>
+      </div>
+      <div class="tc">
+        <div class="tc-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></div>
+        <div class="tc-n">3</div><div class="tc-l">Countries &mdash; IN, UAE, UK</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- DEPARTMENTS -->
+<section class="depts" id="departments">
+  <div class="depts-inner">
+    <div class="depts-h reveal">
+      <h2>Five Departments.<br><em>One Standard of Work.</em></h2>
+      <p>Every department is a specialist unit. Together they give you a complete marketing operation under one roof, one brief, one standard.</p>
+    </div>
+
+    <div class="dept-grid reveal">
+
+      <!-- PRODUCTION -->
+      <a href="upswing_full_portfolio_fixed.html" class="dept-card">
+        <div class="dc-bg"><div class="dc-grid"></div><div class="dc-orb1"></div><div class="dc-orb2"></div></div>
+        <div class="dc-inner">
+          <div class="dc-label">Production Department</div>
+          <div class="dc-h">Content &amp; <em>Production</em></div>
+          <p class="dc-p">From the Kerala Literature Festival to the Indian Navy, Filmfare to brand documentaries. Events, UGC, films, podcasts, and institutional storytelling at any scale.</p>
+          <div class="dc-stats">
+            <div class="dcs"><div class="dcs-n">28</div><div class="dcs-l">Case Studies</div></div>
+            <div class="dcs"><div class="dcs-n">100+</div><div class="dcs-l">Events</div></div>
+            <div class="dcs"><div class="dcs-n">50M+</div><div class="dcs-l">Views</div></div>
+          </div>
+          <div class="dc-cta">View 28 Case Studies <svg viewBox="0 0 16 16"><polyline points="6 12 10 8 6 4"/></svg></div>
+        </div>
+      </a>
+
+      <!-- PERFORMANCE -->
+      <a href="upswing_performance_v2.html" class="dept-card">
+        <div class="dc-bg"><div class="dc-grid"></div><div class="dc-orb1"></div><div class="dc-orb2"></div></div>
+        <div class="dc-inner">
+          <div class="dc-label">Performance Department</div>
+          <div class="dc-h">Performance <em>Marketing</em></div>
+          <p class="dc-p">870 leads. 65% conversion. Every rupee tracked, every result justified. 7 campaigns across healthcare, real estate, education, and services.</p>
+          <div class="dc-stats">
+            <div class="dcs"><div class="dcs-n">7</div><div class="dcs-l">Case Studies</div></div>
+            <div class="dcs"><div class="dcs-n">50K+</div><div class="dcs-l">Leads</div></div>
+            <div class="dcs"><div class="dcs-n">65%</div><div class="dcs-l">Conversion</div></div>
+          </div>
+          <div class="dc-cta">View 7 Case Studies <svg viewBox="0 0 16 16"><polyline points="6 12 10 8 6 4"/></svg></div>
+        </div>
+      </a>
+
+      <!-- INFLUENCER -->
+      <a href="influencer_v2.html" class="dept-card">
+        <div class="dc-bg"><div class="dc-grid"></div><div class="dc-orb1"></div><div class="dc-orb2"></div></div>
+        <div class="dc-inner">
+          <div class="dc-label">Influencer Department</div>
+          <div class="dc-h">Influencer <em>Marketing</em></div>
+          <p class="dc-p">13.1M views. 40 creators activated in 3 hours on zero budget. 1,000 influencers across 14 districts. 10 campaigns built on conversion, not reach.</p>
+          <div class="dc-stats">
+            <div class="dcs"><div class="dcs-n">10</div><div class="dcs-l">Case Studies</div></div>
+            <div class="dcs"><div class="dcs-n">13.1M</div><div class="dcs-l">Views</div></div>
+            <div class="dcs"><div class="dcs-n">&#8377;0.05</div><div class="dcs-l">Lowest CPV</div></div>
+          </div>
+          <div class="dc-cta">View 10 Case Studies <svg viewBox="0 0 16 16"><polyline points="6 12 10 8 6 4"/></svg></div>
+        </div>
+      </a>
+
+    </div>
+
+    <div class="dept-grid-2 reveal rd1" style="margin-top:18px">
+
+      <!-- BRANDING -->
+      <a href="upswing_branding.html" class="dept-card">
+        <div class="dc-bg"><div class="dc-grid"></div><div class="dc-orb1"></div><div class="dc-orb2"></div></div>
+        <div class="dc-inner">
+          <div class="dc-label">Branding Department</div>
+          <div class="dc-h">Brand <em>Identity</em></div>
+          <p class="dc-p">150+ brand identities across UAE, UK, and India. From UAE luxury real estate to a London CRM built to compete against Salesforce. Strategy-led, collateral-complete.</p>
+          <div class="dc-stats">
+            <div class="dcs"><div class="dcs-n">10</div><div class="dcs-l">Case Studies</div></div>
+            <div class="dcs"><div class="dcs-n">3</div><div class="dcs-l">Countries</div></div>
+            <div class="dcs"><div class="dcs-n">150+</div><div class="dcs-l">Brands Built</div></div>
+          </div>
+          <div class="dc-cta">View 10 Case Studies <svg viewBox="0 0 16 16"><polyline points="6 12 10 8 6 4"/></svg></div>
+        </div>
+      </a>
+
+      <!-- SOCIAL MEDIA -->
+      <div class="dept-card dept-card-soc" onclick="openModal()">
+        <div class="dc-bg"><div class="dc-grid"></div><div class="dc-orb1"></div><div class="dc-orb2"></div></div>
+        <div class="dc-inner">
+          <div class="dc-label" style="color:rgba(255,165,0,.8)">Social Media Department</div>
+          <div class="dc-h">Social Media <em style="color:rgba(255,165,0,.8)">Management</em></div>
+          <p class="dc-p">Full-funnel social strategy, content creation, community management, and growth across all platforms. 50+ brands managed with daily delivery and measurable consistency.</p>
+          <div class="dc-stats" style="border-top-color:rgba(255,165,0,.12)">
+            <div class="dcs"><div class="dcs-n" style="color:rgba(255,165,0,.8)">50+</div><div class="dcs-l">Brands Managed</div></div>
+            <div class="dcs"><div class="dcs-n" style="color:rgba(255,165,0,.8)">Daily</div><div class="dcs-l">Delivery</div></div>
+            <div class="dcs"><div class="dcs-n" style="color:rgba(255,165,0,.8)">All</div><div class="dcs-l">Platforms</div></div>
+          </div>
+          <div class="dc-cta" style="color:rgba(255,165,0,.8);border-color:rgba(255,165,0,.25)">Page Temporarily Down <svg viewBox="0 0 16 16"><polyline points="6 12 10 8 6 4"/></svg></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- GMB / CLIENT PROOF TICKER -->
+<div class="marquee reveal" style="margin-top:72px">
+  <div class="mq-t">
+    <div class="mq-i">OPPO Kerala <span class="mq-sep">|</span> GMB Optimisation</div>
+    <div class="mq-i">Kerala Ayurveda Vaidyam <span class="mq-sep">|</span> Local SEO</div>
+    <div class="mq-i">Kerala Savaari <span class="mq-sep">|</span> Performance</div>
+    <div class="mq-i">Therefore I'm <span class="mq-sep">|</span> Social + Influencer</div>
+    <div class="mq-i">Kuruvilla Dental <span class="mq-sep">|</span> GMB + Performance</div>
+    <div class="mq-i">iLeaf Doors <span class="mq-sep">|</span> 30,500 Dealer Leads</div>
+    <div class="mq-i">Tate Real Estate UAE <span class="mq-sep">|</span> Brand + Performance</div>
+    <div class="mq-i">Empire Marine <span class="mq-sep">|</span> Social Media</div>
+    <div class="mq-i">Principle Institute <span class="mq-sep">|</span> Social Media</div>
+    <div class="mq-i">Best Houseboat Alleppey <span class="mq-sep">|</span> Digital + SEO</div>
+    <div class="mq-i">Gallantias <span class="mq-sep">|</span> Social Media</div>
+    <div class="mq-i">Kar Spa <span class="mq-sep">|</span> Social Media</div>
+    <div class="mq-i">Number Hill <span class="mq-sep">|</span> Social Media</div>
+    <div class="mq-i">Himadri Retreat <span class="mq-sep">|</span> Social + SEO</div>
+    <div class="mq-i">Tecza Technology <span class="mq-sep">|</span> Social Media</div>
+    <div class="mq-i">Fly High Solutions <span class="mq-sep">|</span> Social Media</div>
+    <div class="mq-i">KCO Verseas <span class="mq-sep">|</span> Social Media</div>
+    <div class="mq-i">Real Movers <span class="mq-sep">|</span> Social Media</div>
+    <div class="mq-i">Four One Taxi <span class="mq-sep">|</span> Social Media</div>
+    <div class="mq-i">Promise Cleaning <span class="mq-sep">|</span> Social + Website</div>
+    <div class="mq-i">Romana Cargo UAE <span class="mq-sep">|</span> Social Media</div>
+    <div class="mq-i">Enlinea Education <span class="mq-sep">|</span> Social + SEO</div>
+    <div class="mq-i">Agni Gems <span class="mq-sep">|</span> Social Media</div>
+    <div class="mq-i">Sober Villa <span class="mq-sep">|</span> Social Media</div>
+    <div class="mq-i">Engineers CAD Center <span class="mq-sep">|</span> Social Media</div>
+    <!-- dup -->
+    <div class="mq-i">OPPO Kerala <span class="mq-sep">|</span> GMB Optimisation</div>
+    <div class="mq-i">Kerala Ayurveda Vaidyam <span class="mq-sep">|</span> Local SEO</div>
+    <div class="mq-i">Kerala Savaari <span class="mq-sep">|</span> Performance</div>
+    <div class="mq-i">Therefore I'm <span class="mq-sep">|</span> Social + Influencer</div>
+    <div class="mq-i">Kuruvilla Dental <span class="mq-sep">|</span> GMB + Performance</div>
+    <div class="mq-i">iLeaf Doors <span class="mq-sep">|</span> 30,500 Dealer Leads</div>
+    <div class="mq-i">Tate Real Estate UAE <span class="mq-sep">|</span> Brand + Performance</div>
+    <div class="mq-i">Empire Marine <span class="mq-sep">|</span> Social Media</div>
+    <div class="mq-i">Principle Institute <span class="mq-sep">|</span> Social Media</div>
+    <div class="mq-i">Best Houseboat Alleppey <span class="mq-sep">|</span> Digital + SEO</div>
+    <div class="mq-i">Gallantias <span class="mq-sep">|</span> Social Media</div>
+  </div>
+</div>
+
+<!-- CLIENT TAGS -->
+<div class="clients reveal" id="clients">
+  <div class="clients-inner">
+    <h3>Trusted by <em>Leading Brands</em> Across Industries</h3>
+    <div class="ctags">
+      <span class="ctag">Kerala Literature Festival</span>
+      <span class="ctag">Filmfare Awards 2026</span>
+      <span class="ctag">Indian Navy</span>
+      <span class="ctag">South Indian Bank</span>
+      <span class="ctag">Flipkart</span>
+      <span class="ctag">Purplle</span>
+      <span class="ctag">Wonderla</span>
+      <span class="ctag">DC Books</span>
+      <span class="ctag">Quaker Oats</span>
+      <span class="ctag">Faces Canada</span>
+      <span class="ctag">Asset Homes</span>
+      <span class="ctag">Forum Mall</span>
+      <span class="ctag">Hamleys</span>
+      <span class="ctag">Bacardi</span>
+      <span class="ctag">OPPO Kerala</span>
+      <span class="ctag">Alps Goodness</span>
+      <span class="ctag">Desire Derma</span>
+      <span class="ctag">Tate Real Estate</span>
+      <span class="ctag">Magnum Opus UAE</span>
+      <span class="ctag">Mastercare UK</span>
+      <span class="ctag">BiZcult London</span>
+      <span class="ctag">Kerala Ayurveda Vaidyam</span>
+      <span class="ctag">Kerala Savaari</span>
+      <span class="ctag">Therefore I'm</span>
+      <span class="ctag">Kuruvilla Dental</span>
+      <span class="ctag">iLeaf Doors</span>
+      <span class="ctag">Empire Marine</span>
+      <span class="ctag">Best Houseboat Alleppey</span>
+      <span class="ctag">Gallantias</span>
+      <span class="ctag">Himadri Retreat</span>
+      <span class="ctag">Enlinea Education</span>
+      <span class="ctag">Agni Gems</span>
+      <span class="ctag">Sober Villa</span>
+    </div>
+  </div>
+</div>
+
+<!-- WEBSITE STRIP -->
+<div class="web-strip reveal">
+  <div class="web-strip-inner">
+    <div class="web-strip-l">See everything we do at <span>upswingdigital.in</span></div>
+    <a href="https://upswingdigital.in" target="_blank" rel="noopener" class="web-strip-btn">
+      Visit Our Website
+      <svg viewBox="0 0 16 16"><polyline points="6 12 10 8 6 4"/></svg>
+    </a>
+  </div>
+</div>
+
+<!-- TESTIMONIALS -->
+<section class="testi-sec" id="testimonials">
+  <div class="testi-inner">
+    <div class="testi-hdr reveal">
+      <h2>What Our <em>Clients Say</em></h2>
+      <p>Straight from the people who trusted us with their most important projects.</p>
+    </div>
+    <div class="testi-grid reveal">
+      <div class="tcard">
+        <div class="tcard-stars"><svg class="tcard-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="tcard-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="tcard-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="tcard-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="tcard-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+        <p class="tcard-text">"UpSwing executed the KLF content production at a scale we had not seen before. The quality and speed of delivery made the festival's digital presence match the stature of the event itself."</p>
+        <div class="tcard-attr">Kerala Literature Festival</div>
+      </div>
+      <div class="tcard">
+        <div class="tcard-stars"><svg class="tcard-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="tcard-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="tcard-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="tcard-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="tcard-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+        <p class="tcard-text">"The performance campaign for Desire Derma generated 870 qualified leads with a 65% conversion rate. UpSwing understood our market and built a system that delivered ROI we could measure."</p>
+        <div class="tcard-attr">Desire Derma &mdash; Aesthetic Clinic</div>
+      </div>
+      <div class="tcard">
+        <div class="tcard-stars"><svg class="tcard-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="tcard-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="tcard-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="tcard-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="tcard-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+        <p class="tcard-text">"Tate Real Estate's branding and performance campaigns together built our market presence in Abu Dhabi from the ground up. The brand directly contributed to our sales growth in a competitive market."</p>
+        <div class="tcard-attr">Tate Real Estate &mdash; UAE</div>
+      </div>
+      <div class="tcard">
+        <div class="tcard-stars"><svg class="tcard-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="tcard-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="tcard-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="tcard-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="tcard-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+        <p class="tcard-text">"Mastercare's brand now feels like what it is &mdash; a safe, trusted partner in care. Our clients tell us the brand gave them confidence before they even spoke to us. That is everything in our sector."</p>
+        <div class="tcard-attr">Mastercare Home Care &mdash; Norwich, UK</div>
+      </div>
+      <div class="tcard">
+        <div class="tcard-stars"><svg class="tcard-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="tcard-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="tcard-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="tcard-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="tcard-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+        <p class="tcard-text">"Her Care's identity communicates exactly what we needed &mdash; trust, warmth, and professionalism simultaneously. Our clients connect with the brand before we even explain our services."</p>
+        <div class="tcard-attr">Her Care &mdash; Postnatal Wellness</div>
+      </div>
+      <div class="tcard">
+        <div class="tcard-stars"><svg class="tcard-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="tcard-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="tcard-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="tcard-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="tcard-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+        <p class="tcard-text">"The OPPO Kerala influencer campaign achieved 13.1 million views at a CPV that was 85% below industry average. UpSwing's creator network and campaign structure made the difference."</p>
+        <div class="tcard-attr">OPPO Kerala</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONNECT -->
+<section class="connect" id="connect">
+  <div class="connect-inner">
+    <div class="cl reveal">
+      <div class="c-eye">Connect With Us</div>
+      <h2>Let's Talk About <em>Your Next Project.</em></h2>
+      <p>Whether you have a full brief ready or just an idea &mdash; reach out and we will respond within the hour during working hours. WhatsApp gets the fastest reply.</p>
+    </div>
+    <div class="cr reveal rd1">
+      <a href="https://wa.me/918089539154" class="con-btn">
+        <div class="con-ico con-wa-ico">
+          <svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg>
+        </div>
+        <div class="con-body"><div class="con-lbl">WhatsApp</div><div class="con-val">+91 80895 39154</div><div class="con-sub">Fastest response &mdash; usually within minutes</div></div>
+        <div class="con-arr"><svg viewBox="0 0 16 16"><polyline points="6 12 10 8 6 4"/></svg></div>
+      </a>
+      <a href="tel:+918138009154" class="con-btn">
+        <div class="con-ico con-ph-ico">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10a2 2 0 012-2.18h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L9.91 15a16 16 0 006.29 6.29l.86-.86a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+        </div>
+        <div class="con-body"><div class="con-lbl">Call Us</div><div class="con-val">+91 81380 09154</div><div class="con-sub">Mon&ndash;Sat, 9 AM to 7 PM IST</div></div>
+        <div class="con-arr"><svg viewBox="0 0 16 16"><polyline points="6 12 10 8 6 4"/></svg></div>
+      </a>
+      <a href="mailto:hello@upswingdigital.in" class="con-btn">
+        <div class="con-ico con-em-ico">
+          <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
+        </div>
+        <div class="con-body"><div class="con-lbl">Email</div><div class="con-val">hello@upswingdigital.in</div><div class="con-sub">For briefs, proposals, and partnerships</div></div>
+        <div class="con-arr"><svg viewBox="0 0 16 16"><polyline points="6 12 10 8 6 4"/></svg></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="faq-inner">
+    <div class="faq-hdr reveal">
+      <h2>Questions We <em>Actually Get Asked.</em></h2>
+      <p>Answered directly. If yours is not here, just WhatsApp us and we will answer in plain English.</p>
+    </div>
+    <div class="reveal">
+      <details class="fi"><summary class="fq"><span class="fq-t">Are you really the best marketing agency in Kochi?</span><span class="fq-ico"><svg viewBox="0 0 16 16"><line x1="8" y1="3" x2="8" y2="13"/><line x1="3" y1="8" x2="13" y2="8"/></svg></span></summary><p class="fa">We are the <strong>top-ranked digital and marketing agency in Kochi on Google</strong> with a 5.0 rating. We have been operating for over 6 years, with 750+ clients served and 48+ full-time in-house team members. You can verify that ranking on Google right now. We also believe rankings are a lagging indicator &mdash; what we actually put in front of you here is the real proof.</p></details>
+
+      <details class="fi"><summary class="fq"><span class="fq-t">What exactly is the difference between your five departments?</span><span class="fq-ico"><svg viewBox="0 0 16 16"><line x1="8" y1="3" x2="8" y2="13"/><line x1="3" y1="8" x2="13" y2="8"/></svg></span></summary><p class="fa"><strong>Production</strong> handles cameras, crews, events, and storytelling at scale. <strong>Performance Marketing</strong> runs paid campaigns where every rupee is tracked and attributed. <strong>Influencer Marketing</strong> builds creator-led campaigns focused on measurable conversion, not just reach. <strong>Branding</strong> builds complete identity systems from strategy to every collateral. <strong>Social Media Management</strong> handles daily presence, content, community, and growth across all platforms. They operate as specialist units but can be briefed together for complete campaigns.</p></details>
+
+      <details class="fi"><summary class="fq"><span class="fq-t">Do you work with clients outside Kerala and India?</span><span class="fq-ico"><svg viewBox="0 0 16 16"><line x1="8" y1="3" x2="8" y2="13"/><line x1="3" y1="8" x2="13" y2="8"/></svg></span></summary><p class="fa">Yes. We have documented projects across <strong>India, UAE, and the UK</strong>. The branding portfolio includes clients in Abu Dhabi, London, and Norwich. The performance marketing portfolio includes campaigns targeting GCC markets. Geography is not a constraint. The right brief is.</p></details>
+
+      <details class="fi"><summary class="fq"><span class="fq-t">What size of projects do you handle?</span><span class="fq-ico"><svg viewBox="0 0 16 16"><line x1="8" y1="3" x2="8" y2="13"/><line x1="3" y1="8" x2="13" y2="8"/></svg></span></summary><p class="fa">Scale is where we are most comfortable. Our portfolio includes the <strong>Kerala Literature Festival, Filmfare Awards 2026, an Indian Navy film across 9 countries, Quaker Oats influencer activation across 14 Kerala districts,</strong> and 150+ brand identity projects globally. We have handled productions with audiences in the millions and campaigns with 1,000+ influencers. The infrastructure for large-scale work is already in place.</p></details>
+
+      <details class="fi"><summary class="fq"><span class="fq-t">Are the metrics in these case studies real?</span><span class="fq-ico"><svg viewBox="0 0 16 16"><line x1="8" y1="3" x2="8" y2="13"/><line x1="3" y1="8" x2="13" y2="8"/></svg></span></summary><p class="fa">Every figure is from an actual campaign. The 870 leads and 65% conversion from Desire Derma &mdash; real. The 13.1M views at Rs.0.06 CPV from OPPO Kerala &mdash; real. The 30,500 dealer leads across 5 states from iLeaf &mdash; real. We document at this depth because we believe process and reasoning matter as much as outcomes.</p></details>
+
+      <details class="fi"><summary class="fq"><span class="fq-t">Can multiple departments work on the same project?</span><span class="fq-ico"><svg viewBox="0 0 16 16"><line x1="8" y1="3" x2="8" y2="13"/><line x1="3" y1="8" x2="13" y2="8"/></svg></span></summary><p class="fa">Yes &mdash; and this is often where the best work happens. A brand launch might involve branding, production, influencer seeding, performance acquisition, and social media &mdash; all through one team, one brief, one quality standard. Outputs are coherent in a way that is impossible when you are briefing separate agencies on separate pieces.</p></details>
+
+      <details class="fi"><summary class="fq"><span class="fq-t">What does your team look like?</span><span class="fq-ico"><svg viewBox="0 0 16 16"><line x1="8" y1="3" x2="8" y2="13"/><line x1="3" y1="8" x2="13" y2="8"/></svg></span></summary><p class="fa">We have a <strong>48+ member in-house team</strong> covering production crew, cinematographers, editors, performance marketers, social media managers, designers, brand strategists, and influencer relationship managers. Everything is done in-house. No outsourcing, no freelance patchwork. You get a dedicated team that is accountable from brief to delivery.</p></details>
+
+      <details class="fi"><summary class="fq"><span class="fq-t">How do you price your services?</span><span class="fq-ico"><svg viewBox="0 0 16 16"><line x1="8" y1="3" x2="8" y2="13"/><line x1="3" y1="8" x2="13" y2="8"/></svg></span></summary><p class="fa">Both project-based and retainer, depending on what you need. <strong>Project pricing</strong> for defined deliverables like brand identities, event productions, or specific campaigns. <strong>Retainers</strong> for ongoing work like social media management, sustained campaigns, or content production where compounding learning matters. We will recommend the right structure once we understand the brief.</p></details>
+
+      <details class="fi"><summary class="fq"><span class="fq-t">How quickly can you start?</span><span class="fq-ico"><svg viewBox="0 0 16 16"><line x1="8" y1="3" x2="8" y2="13"/><line x1="3" y1="8" x2="13" y2="8"/></svg></span></summary><p class="fa">Performance campaigns: briefed and live in <strong>1&ndash;2 weeks</strong>. Influencer campaigns: 2&ndash;3 weeks for creator identification and briefing. Branding: 3&ndash;12 weeks depending on scope and collateral requirements. Social media onboarding: typically within one week. Production timelines vary by scale. Call or WhatsApp us and we will give you a real timeline in the conversation.</p></details>
+
+      <details class="fi"><summary class="fq"><span class="fq-t">What industries have you worked in?</span><span class="fq-ico"><svg viewBox="0 0 16 16"><line x1="8" y1="3" x2="8" y2="13"/><line x1="3" y1="8" x2="13" y2="8"/></svg></span></summary><p class="fa">Healthcare and aesthetics, real estate (India and UAE), FMCG, retail and e-commerce, education and EdTech, hospitality and tourism, automotive, banking and finance, luxury, beauty, entertainment and events, government and institutional, logistics, technology and SaaS. If you are in a category not listed here, it almost certainly does not disqualify you.</p></details>
+
+      <details class="fi"><summary class="fq"><span class="fq-t">Why is the Social Media department page down?</span><span class="fq-ico"><svg viewBox="0 0 16 16"><line x1="8" y1="3" x2="8" y2="13"/><line x1="3" y1="8" x2="13" y2="8"/></svg></span></summary><p class="fa">The Social Media case studies page is experiencing a temporary technical issue and will be back shortly. In the meantime, you can reach out directly via WhatsApp or email and we will share relevant case studies with you personally.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section class="cta-band">
+  <div class="cta-inner">
+    <h2>The Brief Is the <em>Starting Point.</em></h2>
+    <p>Tell us what you are trying to achieve. We will tell you if we can help and exactly how.</p>
+    <div class="cta-btns">
+      <a href="https://wa.me/918089539154" class="btn-pr">WhatsApp Us Now</a>
+      <a href="tel:+918138009154" class="btn-sc">+91 81380 09154</a>
+      <a href="https://upswingdigital.in" target="_blank" rel="noopener" class="btn-sc">upswingdigital.in</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="fl">
+    <div class="fl-b">U</div>
+    <div><div class="fl-n">UpSwing Digital</div><div class="fl-s">Innovation &middot; Connectivity &middot; Development</div></div>
+  </div>
+  <div class="fr">
+    <div class="fr-c">Production &middot; Performance &middot; Influencer &middot; Branding &middot; Social Media &nbsp;|&nbsp; Kochi, India</div>
+    <div class="fr-t">hello@upswingdigital.in &nbsp;&middot;&nbsp; +91 81380 09154</div>
+  </div>
+</footer>
+
+<!-- MODAL -->
+<div class="modal-ov" id="modal" onclick="closeModalOv(event)">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal()">&#10005;</button>
+    <div class="modal-bar"></div>
+    <div class="modal-icon">
+      <svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+    </div>
+    <div class="modal-h">This Page Is Temporarily Down</div>
+    <p class="modal-p">We apologise for the inconvenience. Our Social Media case studies page is experiencing a <strong>temporary technical issue</strong> and will be back at the earliest. Please reach out directly &mdash; we are happy to share relevant work with you personally.</p>
+    <div class="modal-btns">
+      <a href="https://wa.me/918089539154" class="modal-btn mb-wa">WhatsApp Us</a>
+      <a href="mailto:hello@upswingdigital.in" class="modal-btn mb-mail">Send Email</a>
+    </div>
+  </div>
+</div>
+
+<script>
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add("in"); });
+}, { threshold: 0.06, rootMargin: "0px 0px -24px 0px" });
+document.querySelectorAll(".reveal").forEach(el => obs.observe(el));
+
+function toggleMenu() {
+  const h = document.getElementById("ham");
+  const m = document.getElementById("mobMenu");
+  h.classList.toggle("open");
+  m.classList.toggle("open");
+}
+function closeMenu() {
+  document.getElementById("ham").classList.remove("open");
+  document.getElementById("mobMenu").classList.remove("open");
+}
+document.addEventListener("click", e => {
+  const m = document.getElementById("mobMenu");
+  const h = document.getElementById("ham");
+  if(m.classList.contains("open") && !m.contains(e.target) && !h.contains(e.target)) closeMenu();
+});
+
+function openModal() {
+  document.getElementById("modal").classList.add("open");
+  document.body.style.overflow = "hidden";
+}
+function closeModal() {
+  document.getElementById("modal").classList.remove("open");
+  document.body.style.overflow = "";
+}
+function closeModalOv(e) {
+  if(e.target === document.getElementById("modal")) closeModal();
+}
+document.addEventListener("keydown", e => { if(e.key === "Escape") closeModal(); });
+</script>
+</body>
+</html>
+/* =====================================================================
+   UpSwing Digital — Case Studies & Portfolio
+   Stylesheet: upswing_home.css
+   Brand: Cabinet Grotesk + Poppins | Navy #1A2240 | Green #48C96A
+   ===================================================================== */
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#1A2240;--navy-deep:#0F1629;--navy-mid:#162244;
+  --green:#2A6E3F;--green-mid:#318B4A;--green-neon:#48C96A;
+  --green-pale:#E5F5EB;--green-ultra:#F0FAF3;
+  --ink:#0D1117;--muted:#6B7688;--white:#ffffff;
+  --rule-dark:rgba(255,255,255,0.07);--rule-light:rgba(26,34,64,0.09);
+  --g:"Cabinet Grotesk",sans-serif;--p:"Poppins",sans-serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--p);background:#fff;color:var(--ink);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+
+/* ═══ NAV ═══ */
+nav{position:fixed;top:0;left:0;right:0;z-index:900;height:64px;padding:0 5vw;display:flex;align-items:center;justify-content:space-between;background:rgba(15,22,41,0.97);backdrop-filter:blur(20px);border-bottom:1px solid var(--rule-dark)}
+.nl{display:flex;align-items:center;gap:10px;text-decoration:none}
+.nb{width:32px;height:32px;border-radius:8px;background:linear-gradient(135deg,var(--green),var(--green-neon));display:flex;align-items:center;justify-content:center;font-family:var(--g);font-size:15px;font-weight:900;color:#fff;flex-shrink:0}
+.nn{font-family:var(--g);font-size:15px;font-weight:800;color:#fff;display:block;line-height:1.1}
+.ns{font-size:8px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--green-neon);display:block}
+.nav-links{display:flex;align-items:center;gap:18px}
+.nav-a{font-size:11px;font-weight:500;color:rgba(255,255,255,.4);text-decoration:none;transition:color .2s;white-space:nowrap;letter-spacing:.02em}
+.nav-a:hover{color:var(--green-neon)}
+.nav-cta{font-family:var(--g);font-size:12px;font-weight:700;color:var(--navy-deep);background:var(--green-neon);padding:8px 18px;border-radius:100px;text-decoration:none;white-space:nowrap;transition:opacity .2s}
+.nav-cta:hover{opacity:.85}
+.ham{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:6px}
+.ham span{display:block;width:22px;height:2px;background:rgba(255,255,255,.65);border-radius:2px;transition:all .3s}
+.ham.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.ham.open span:nth-child(2){opacity:0}
+.ham.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+.mob-menu{display:none;position:fixed;top:64px;left:0;right:0;z-index:899;background:rgba(10,16,32,.98);padding:20px 5vw 28px;flex-direction:column;backdrop-filter:blur(24px);border-bottom:1px solid var(--rule-dark)}
+.mob-menu.open{display:flex}
+.mob-a{padding:13px 0;font-size:14px;font-weight:600;color:rgba(255,255,255,.55);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.05);transition:color .2s}
+.mob-a:hover{color:var(--green-neon)}
+.mob-btns{margin-top:18px;display:flex;gap:8px;flex-wrap:wrap}
+.mob-btn{flex:1;min-width:120px;display:flex;align-items:center;justify-content:center;gap:7px;padding:12px 14px;border-radius:10px;font-family:var(--g);font-size:12px;font-weight:700;text-decoration:none;transition:opacity .2s}
+.mob-btn:hover{opacity:.85}
+
+/* ═══ HERO ═══ */
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:100px 5vw 80px;position:relative;overflow:hidden;background:var(--navy-deep)}
+/* animated grid */
+.hg{position:absolute;inset:-5%;width:110%;height:110%;
+  background-image:linear-gradient(rgba(72,201,106,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(72,201,106,.05) 1px,transparent 1px);
+  background-size:52px 52px;animation:gridDrift 22s linear infinite;pointer-events:none}
+/* diagonal lines */
+.hd{position:absolute;inset:0;pointer-events:none;
+  background-image:repeating-linear-gradient(45deg,rgba(72,201,106,.025) 0,rgba(72,201,106,.025) 1px,transparent 0,transparent 50%);
+  background-size:72px 72px;animation:diagDrift 30s linear infinite}
+@keyframes gridDrift{0%{transform:translate(0,0)}100%{transform:translate(52px,52px)}}
+@keyframes diagDrift{0%{background-position:0 0}100%{background-position:72px 72px}}
+/* mesh */
+.hm{position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(ellipse 80% 60% at 72% 18%,rgba(42,110,63,.30) 0%,transparent 55%),
+             radial-gradient(ellipse 55% 55% at 10% 85%,rgba(72,201,106,.12) 0%,transparent 50%),
+             radial-gradient(ellipse 45% 40% at 88% 78%,rgba(26,34,64,.9) 0%,transparent 55%);
+  animation:meshFloat 14s ease-in-out infinite alternate}
+@keyframes meshFloat{0%{opacity:1;transform:scale(1)}50%{opacity:.8;transform:scale(1.03) translate(-1%,1%)}100%{opacity:1;transform:scale(1.015) translate(1%,-1%)}}
+/* orbs */
+.orb{position:absolute;border-radius:50%;pointer-events:none}
+.o1{width:520px;height:520px;top:-180px;right:-80px;background:radial-gradient(circle,rgba(42,110,63,.26) 0%,transparent 65%);animation:orbA 9s ease-in-out infinite alternate}
+.o2{width:380px;height:380px;bottom:-140px;left:-60px;background:radial-gradient(circle,rgba(72,201,106,.10) 0%,transparent 65%);animation:orbA 13s ease-in-out infinite alternate-reverse}
+.o3{width:260px;height:260px;top:42%;left:42%;background:radial-gradient(circle,rgba(42,110,63,.07) 0%,transparent 65%);animation:orbA 18s ease-in-out infinite alternate}
+@keyframes orbA{0%{transform:scale(1) translateY(0)}100%{transform:scale(1.14) translateY(-22px)}}
+/* noise */
+.hn{position:absolute;inset:0;opacity:.02;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size:180px;animation:noiseS 7s steps(1) infinite}
+@keyframes noiseS{0%{background-position:0 0}25%{background-position:40px 20px}50%{background-position:80px 40px}75%{background-position:20px 80px}}
+.hero::after{content:"";position:absolute;bottom:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,transparent 5%,var(--green) 30%,var(--green-neon) 50%,var(--green) 70%,transparent 95%);
+  animation:lineGlow 3.5s ease-in-out infinite alternate}
+@keyframes lineGlow{0%{opacity:.5;transform:scaleX(.88)}100%{opacity:1;transform:scaleX(1)}}
+
+.hi{position:relative;z-index:2;max-width:920px}
+.hero-eye{display:inline-flex;align-items:center;gap:12px;font-size:10px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--green-neon);margin-bottom:24px;animation:fadeUp .7s ease both}
+.hero-eye::before{content:"";width:28px;height:1px;background:var(--green-neon);animation:lineExp .9s .3s ease both}
+@keyframes lineExp{from{width:0}to{width:28px}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
+.hero-h1{font-family:var(--g);font-size:clamp(42px,7.2vw,96px);font-weight:900;line-height:.92;letter-spacing:-.045em;margin-bottom:26px;animation:fadeUp .8s .07s ease both}
+.hero-h1 .dim{display:block;color:rgba(255,255,255,.18)}
+.hero-h1 .bright{display:block;color:#fff}
+.hero-h1 .accent{display:block;color:var(--green-neon);font-family:var(--p);font-weight:300;font-size:.48em;letter-spacing:-.01em;margin-top:14px;animation:fadeUp .8s .18s ease both}
+.hero-p{font-size:clamp(14px,1.7vw,17px);font-weight:300;color:rgba(255,255,255,.38);max-width:560px;line-height:1.9;margin-bottom:36px;animation:fadeUp .8s .14s ease both}
+.hero-p strong{color:rgba(255,255,255,.65);font-weight:500}
+
+/* hero connect */
+.hc{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:44px;animation:fadeUp .8s .2s ease both}
+.hc-btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:100px;font-family:var(--g);font-size:12px;font-weight:700;text-decoration:none;transition:transform .2s,box-shadow .2s;white-space:nowrap}
+.hc-btn:hover{transform:translateY(-2px)}
+.hc-wa{background:#25D366;color:#fff}.hc-wa:hover{box-shadow:0 8px 28px rgba(37,211,102,.38)}
+.hc-call{background:var(--green-neon);color:var(--navy-deep)}.hc-call:hover{box-shadow:0 8px 28px rgba(72,201,106,.38)}
+.hc-mail{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);color:#fff}.hc-mail:hover{background:rgba(255,255,255,.14)}
+.hc-web{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);color:#fff}.hc-web:hover{background:rgba(255,255,255,.14)}
+
+/* hero stats */
+.hs{display:flex;flex-wrap:wrap;gap:0;border-top:1px solid rgba(255,255,255,.08);padding-top:32px;animation:fadeUp .8s .28s ease both}
+.hst{padding:0 34px 0 0;margin-right:34px;border-right:1px solid rgba(255,255,255,.08)}
+.hst:last-child{border-right:none;padding-right:0;margin-right:0}
+.hst-n{font-family:var(--g);font-size:clamp(28px,3.5vw,42px);font-weight:900;color:var(--green-neon);line-height:1;margin-bottom:4px}
+.hst-l{font-size:9px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.24)}
+
+/* ═══ PROOF SCROLL ═══ */
+.pscroll{background:#fff;border-bottom:1px solid var(--rule-light);overflow:hidden;position:relative}
+.pscroll::before,.pscroll::after{content:"";position:absolute;top:0;bottom:0;width:80px;z-index:2;pointer-events:none}
+.pscroll::before{left:0;background:linear-gradient(90deg,#fff,transparent)}
+.pscroll::after{right:0;background:linear-gradient(-90deg,#fff,transparent)}
+.pt{display:flex;animation:mqS 30s linear infinite;width:max-content}
+.pt:hover{animation-play-state:paused}
+@keyframes mqS{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.pi{display:flex;align-items:center;gap:10px;padding:16px 30px;border-right:1px solid var(--rule-light);flex-shrink:0;white-space:nowrap}
+.pi-dot{width:5px;height:5px;border-radius:50%;background:var(--green-neon);flex-shrink:0}
+.pi-t{font-family:var(--g);font-size:11px;font-weight:800;color:rgba(13,17,23,.36);letter-spacing:.02em}
+
+/* ═══ GOOGLE STRIP ═══ */
+.gstrip{background:var(--navy);padding:22px 5vw;text-align:center;border-bottom:1px solid rgba(255,255,255,.06)}
+.gstrip-inner{max-width:900px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap}
+.gstrip-stars{display:flex;gap:3px}
+.gstrip-star{width:16px;height:16px;fill:#FBBC04}
+.gstrip-text{font-family:var(--g);font-size:15px;font-weight:700;color:rgba(255,255,255,.72);letter-spacing:-.01em}
+.gstrip-text em{color:var(--green-neon);font-style:normal}
+.gstrip-link{font-family:var(--g);font-size:11px;font-weight:700;color:var(--green-neon);text-decoration:none;border:1px solid rgba(72,201,106,.3);border-radius:100px;padding:5px 14px;white-space:nowrap;transition:background .2s}
+.gstrip-link:hover{background:rgba(72,201,106,.12)}
+
+/* ═══ TRUST BADGES ═══ */
+.trust{padding:64px 5vw 56px;background:#fff;position:relative;overflow:hidden}
+.trust::before{content:"";position:absolute;inset:0;background-image:radial-gradient(circle,rgba(42,110,63,.05) 1px,transparent 1px);background-size:30px 30px;pointer-events:none}
+.trust-inner{max-width:1200px;margin:0 auto;position:relative;z-index:1}
+.sec-eye{font-size:9px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--green);text-align:center;margin-bottom:28px;display:flex;align-items:center;justify-content:center;gap:12px}
+.sec-eye::before,.sec-eye::after{content:"";width:22px;height:1px;background:var(--green)}
+.trust-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
+.tc{background:var(--green-ultra);border:1px solid rgba(42,110,63,.1);border-radius:14px;padding:22px 14px;text-align:center;transition:transform .22s,box-shadow .22s;cursor:default}
+.tc:hover{transform:translateY(-4px);box-shadow:0 10px 32px rgba(42,110,63,.14)}
+.tc-n{font-family:var(--g);font-size:24px;font-weight:900;color:var(--green);line-height:1;margin-bottom:5px}
+.tc-l{font-size:9px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);line-height:1.45}
+.tc-icon{margin-bottom:8px}
+.tc-icon svg{width:22px;height:22px;stroke:var(--green);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+
+/* ═══ DEPT SECTION ═══ */
+.depts{padding:72px 5vw 0;background:#fff;position:relative;overflow:hidden}
+.depts::before{content:"";position:absolute;inset:0;background-image:radial-gradient(circle,rgba(42,110,63,.04) 1px,transparent 1px);background-size:30px 30px;pointer-events:none}
+.depts-inner{max-width:1200px;margin:0 auto;position:relative;z-index:1}
+.depts-h{text-align:center;margin-bottom:56px}
+.depts-h h2{font-family:var(--g);font-size:clamp(28px,4vw,50px);font-weight:900;letter-spacing:-.04em;color:var(--navy);line-height:1;margin-bottom:10px}
+.depts-h h2 em{color:var(--green);font-style:normal}
+.depts-h p{font-size:15px;font-weight:300;color:var(--muted);max-width:520px;margin:0 auto;line-height:1.8}
+.dept-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:18px}
+.dept-grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.dept-card{background:var(--navy-deep);border-radius:18px;overflow:hidden;position:relative;cursor:pointer;transition:transform .25s,box-shadow .25s;text-decoration:none;display:block}
+.dept-card:hover{transform:translateY(-6px);box-shadow:0 20px 56px rgba(15,22,41,.3)}
+/* card bg anim */
+.dc-bg{position:absolute;inset:0;pointer-events:none}
+.dc-grid{position:absolute;inset:-5%;width:110%;height:110%;
+  background-image:linear-gradient(rgba(72,201,106,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(72,201,106,.04) 1px,transparent 1px);
+  background-size:36px 36px;animation:gridDrift 24s linear infinite}
+.dc-orb1{position:absolute;top:-60px;right:-60px;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,rgba(42,110,63,.22) 0%,transparent 65%);animation:orbA 10s ease-in-out infinite alternate}
+.dc-orb2{position:absolute;bottom:-60px;left:-40px;width:180px;height:180px;border-radius:50%;background:radial-gradient(circle,rgba(72,201,106,.08) 0%,transparent 65%);animation:orbA 14s ease-in-out infinite alternate-reverse}
+.dc-inner{position:relative;z-index:1;padding:28px 26px 24px}
+.dc-label{font-size:9px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--green-neon);margin-bottom:14px;display:flex;align-items:center;gap:9px}
+.dc-label::before{content:"";width:20px;height:1px;background:var(--green-neon)}
+.dc-h{font-family:var(--g);font-size:clamp(18px,2.2vw,24px);font-weight:900;color:#fff;letter-spacing:-.03em;line-height:1.1;margin-bottom:10px}
+.dc-h em{color:var(--green-neon);font-style:normal}
+.dc-p{font-size:12px;font-weight:300;color:rgba(255,255,255,.38);line-height:1.72;margin-bottom:18px}
+.dc-stats{display:flex;gap:0;border-top:1px solid rgba(255,255,255,.07);padding-top:16px;margin-bottom:18px}
+.dcs{flex:1;text-align:center;border-right:1px solid rgba(255,255,255,.07)}
+.dcs:last-child{border-right:none}
+.dcs-n{font-family:var(--g);font-size:18px;font-weight:900;color:var(--green-neon);line-height:1;margin-bottom:3px}
+.dcs-l{font-size:8px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.24)}
+.dc-cta{display:inline-flex;align-items:center;gap:8px;font-family:var(--g);font-size:11px;font-weight:700;color:var(--green-neon);border:1px solid rgba(72,201,106,.25);border-radius:100px;padding:8px 16px;transition:all .2s}
+.dept-card:hover .dc-cta{background:rgba(72,201,106,.12);border-color:rgba(72,201,106,.5)}
+.dc-cta svg{width:12px;height:12px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;transition:transform .2s}
+.dept-card:hover .dc-cta svg{transform:translateX(3px)}
+/* soc media card */
+.dept-card-soc{border:1px dashed rgba(255,255,255,.2)}
+.dept-card-soc .dc-cta{color:rgba(255,165,0,.8);border-color:rgba(255,165,0,.25)}
+.dept-card-soc:hover .dc-cta{background:rgba(255,165,0,.08);border-color:rgba(255,165,0,.5)}
+
+/* ═══ CLIENTS STRIP ═══ */
+.clients{padding:56px 5vw;background:var(--green-ultra);border-top:1px solid rgba(42,110,63,.1);border-bottom:1px solid rgba(42,110,63,.1)}
+.clients-inner{max-width:1200px;margin:0 auto}
+.clients h3{font-family:var(--g);font-size:clamp(18px,2.5vw,26px);font-weight:900;color:var(--navy);letter-spacing:-.03em;margin-bottom:20px;text-align:center}
+.clients h3 em{color:var(--green);font-style:normal}
+.ctags{display:flex;flex-wrap:wrap;justify-content:center;gap:7px}
+.ctag{background:#fff;border:1px solid rgba(42,110,63,.12);border-radius:100px;padding:7px 16px;font-family:var(--g);font-size:11px;font-weight:700;color:rgba(26,34,64,.5);white-space:nowrap;transition:all .2s}
+.ctag:hover{background:var(--green-pale);color:var(--green);border-color:rgba(42,110,63,.3)}
+
+/* ═══ MARQUEE (client ticker) ═══ */
+.marquee{background:var(--navy);overflow:hidden;position:relative;padding:0}
+.marquee::before,.marquee::after{content:"";position:absolute;top:0;bottom:0;width:80px;z-index:2;pointer-events:none}
+.marquee::before{left:0;background:linear-gradient(90deg,var(--navy),transparent)}
+.marquee::after{right:0;background:linear-gradient(-90deg,var(--navy),transparent)}
+.mq-t{display:flex;width:max-content;animation:mqS 38s linear infinite}
+.mq-t:hover{animation-play-state:paused}
+.mq-i{display:flex;align-items:center;gap:10px;padding:15px 28px;border-right:1px solid rgba(255,255,255,.06);flex-shrink:0;white-space:nowrap;font-family:var(--g);font-size:12px;font-weight:700;color:rgba(255,255,255,.55);letter-spacing:-.01em}
+.mq-sep{color:var(--green-neon);font-size:10px;margin:0 2px}
+
+/* ═══ TESTIMONIALS ═══ */
+.testi-sec{padding:80px 5vw;background:#fff;position:relative;overflow:hidden}
+.testi-sec::before{content:"";position:absolute;inset:0;background-image:radial-gradient(circle,rgba(42,110,63,.04) 1px,transparent 1px);background-size:28px 28px;pointer-events:none}
+.testi-inner{max-width:1200px;margin:0 auto;position:relative;z-index:1}
+.testi-hdr{text-align:center;margin-bottom:48px}
+.testi-hdr h2{font-family:var(--g);font-size:clamp(24px,3.5vw,42px);font-weight:900;letter-spacing:-.035em;color:var(--navy);margin-bottom:8px}
+.testi-hdr h2 em{color:var(--green);font-style:normal}
+.testi-hdr p{font-size:14px;font-weight:300;color:var(--muted)}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.tcard{background:var(--navy);border-radius:16px;padding:28px 24px;position:relative;overflow:hidden}
+.tcard::before{content:'"';position:absolute;top:8px;left:14px;font-family:var(--g);font-size:96px;font-weight:900;color:var(--green-neon);opacity:.06;line-height:1;pointer-events:none}
+.tcard-stars{display:flex;gap:2px;margin-bottom:12px}
+.tcard-star{width:12px;height:12px;fill:#FBBC04}
+.tcard-text{font-size:13px;font-weight:300;font-style:italic;color:rgba(255,255,255,.72);line-height:1.75;margin-bottom:16px;position:relative;z-index:1}
+.tcard-attr{font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--green-neon);display:flex;align-items:center;gap:8px}
+.tcard-attr::before{content:"";width:14px;height:1px;background:var(--green-neon)}
+
+/* ═══ WEBSITE CTA STRIP ═══ */
+.web-strip{background:linear-gradient(135deg,var(--navy-mid),var(--navy-deep));padding:36px 5vw;border-top:1px solid rgba(255,255,255,.07);border-bottom:1px solid rgba(255,255,255,.07)}
+.web-strip-inner{max-width:1000px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.web-strip-l{font-family:var(--g);font-size:clamp(16px,2.2vw,22px);font-weight:800;color:#fff;letter-spacing:-.02em}
+.web-strip-l span{color:var(--green-neon)}
+.web-strip-btn{display:inline-flex;align-items:center;gap:9px;background:var(--green-neon);color:var(--navy-deep);font-family:var(--g);font-size:13px;font-weight:800;padding:13px 28px;border-radius:100px;text-decoration:none;transition:all .2s;white-space:nowrap}
+.web-strip-btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(72,201,106,.38)}
+.web-strip-btn svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+
+/* ═══ CONNECT ═══ */
+.connect{padding:80px 5vw;background:var(--green-ultra);border-top:1px solid rgba(42,110,63,.12)}
+.connect-inner{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.cl .c-eye{font-size:9px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:var(--green);margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.cl .c-eye::before{content:"";width:18px;height:1px;background:var(--green)}
+.cl h2{font-family:var(--g);font-size:clamp(26px,3.5vw,42px);font-weight:900;letter-spacing:-.035em;color:var(--navy);line-height:1;margin-bottom:12px}
+.cl h2 em{color:var(--green);font-style:normal}
+.cl p{font-size:14px;font-weight:300;color:var(--muted);line-height:1.82}
+.cr{display:flex;flex-direction:column;gap:11px}
+.con-btn{display:flex;align-items:center;gap:12px;padding:15px 20px;border-radius:14px;text-decoration:none;background:#fff;border:1px solid var(--rule-light);transition:all .22s}
+.con-btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(42,110,63,.14);border-color:rgba(42,110,63,.25)}
+.con-ico{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.con-ico svg{width:18px;height:18px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.con-wa-ico{background:#25D366}
+.con-ph-ico{background:var(--green)}
+.con-em-ico{background:var(--green)}
+.con-body{min-width:0}
+.con-lbl{font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:2px}
+.con-val{font-family:var(--g);font-size:14px;font-weight:800;color:var(--navy);word-break:break-all}
+.con-sub{font-size:10px;color:var(--muted);margin-top:1px}
+.con-arr{margin-left:auto;flex-shrink:0}
+.con-arr svg{width:14px;height:14px;stroke:var(--muted);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;transition:all .2s}
+.con-btn:hover .con-arr svg{stroke:var(--green);transform:translateX(3px)}
+
+/* ═══ FAQ ═══ */
+.faq{padding:80px 5vw;background:#fff;position:relative;overflow:hidden}
+.faq::before{content:"";position:absolute;inset:0;background-image:radial-gradient(circle,rgba(42,110,63,.04) 1px,transparent 1px);background-size:28px 28px;pointer-events:none}
+.faq-inner{max-width:800px;margin:0 auto;position:relative;z-index:1}
+.faq-hdr{text-align:center;margin-bottom:48px}
+.faq-hdr h2{font-family:var(--g);font-size:clamp(24px,3.8vw,44px);font-weight:900;letter-spacing:-.035em;color:var(--navy);margin-bottom:8px}
+.faq-hdr h2 em{color:var(--green);font-style:normal}
+.faq-hdr p{font-size:14px;font-weight:300;color:var(--muted);line-height:1.8}
+details.fi{border-bottom:1px solid var(--rule-light)}
+details.fi:first-of-type{border-top:1px solid var(--rule-light)}
+summary.fq{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:20px 0;cursor:pointer;list-style:none}
+summary.fq::-webkit-details-marker{display:none}
+.fq-t{font-family:var(--g);font-size:14px;font-weight:700;color:var(--navy);letter-spacing:-.02em;line-height:1.3;transition:color .2s}
+details[open] .fq-t{color:var(--green)}
+.fq-ico{width:24px;height:24px;border-radius:50%;border:1px solid rgba(42,110,63,.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .2s}
+.fq-ico svg{width:10px;height:10px;stroke:var(--muted);fill:none;stroke-width:2.2;stroke-linecap:round;transition:transform .28s}
+details[open] .fq-ico{background:var(--green);border-color:var(--green)}
+details[open] .fq-ico svg{stroke:#fff;transform:rotate(45deg)}
+.fa{padding:0 0 20px;font-size:13px;font-weight:300;color:var(--muted);line-height:1.88}
+.fa strong{color:var(--navy);font-weight:500}
+
+/* ═══ CTA BAND ═══ */
+.cta-band{padding:88px 5vw;background:var(--navy-deep);text-align:center;position:relative;overflow:hidden}
+.cta-band::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 65% 65% at 50% 50%,rgba(42,110,63,.20) 0%,transparent 65%);pointer-events:none}
+.cta-band::after{content:"";position:absolute;inset:0;background-image:radial-gradient(circle,rgba(72,201,106,.05) 1px,transparent 1px);background-size:30px 30px;pointer-events:none;animation:gridDrift 26s linear infinite}
+.cta-inner{position:relative;z-index:1}
+.cta-band h2{font-family:var(--g);font-size:clamp(30px,5vw,64px);font-weight:900;letter-spacing:-.04em;line-height:.95;color:#fff;margin-bottom:16px}
+.cta-band h2 em{color:var(--green-neon);font-style:normal}
+.cta-band p{font-size:15px;font-weight:300;color:rgba(255,255,255,.35);max-width:380px;margin:0 auto 40px;line-height:1.82}
+.cta-btns{display:flex;align-items:center;justify-content:center;gap:11px;flex-wrap:wrap}
+.btn-pr{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--green-mid),var(--green-neon));color:var(--navy-deep);font-family:var(--g);font-size:13px;font-weight:900;padding:14px 32px;border-radius:100px;text-decoration:none;transition:all .2s}
+.btn-pr:hover{transform:translateY(-3px);box-shadow:0 14px 44px rgba(72,201,106,.36)}
+.btn-sc{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);color:#fff;font-family:var(--g);font-size:13px;font-weight:700;padding:14px 28px;border-radius:100px;text-decoration:none;transition:all .2s}
+.btn-sc:hover{background:rgba(255,255,255,.12)}
+
+/* ═══ FOOTER ═══ */
+footer{background:#050A12;padding:36px 5vw;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;border-top:1px solid rgba(255,255,255,.05)}
+.fl{display:flex;align-items:center;gap:9px}
+.fl-b{width:28px;height:28px;border-radius:7px;background:linear-gradient(135deg,var(--green),var(--green-neon));display:flex;align-items:center;justify-content:center;font-family:var(--g);font-size:13px;font-weight:900;color:#fff}
+.fl-n{font-family:var(--g);font-size:13px;font-weight:800;color:#fff}
+.fl-s{font-size:9px;color:rgba(255,255,255,.2);display:block;margin-top:1px}
+.fr{text-align:right}
+.fr-c{font-size:10px;color:rgba(255,255,255,.18)}
+.fr-t{font-size:11px;font-weight:600;color:var(--green-neon);margin-top:3px}
+
+/* ═══ MODAL ═══ */
+.modal-ov{display:none;position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,.82);backdrop-filter:blur(10px);align-items:center;justify-content:center;padding:20px}
+.modal-ov.open{display:flex}
+.modal-box{background:var(--navy);border:1px solid rgba(255,165,0,.25);border-radius:20px;padding:36px 32px;max-width:420px;width:100%;text-align:center;position:relative;animation:modalIn .3s cubic-bezier(.22,1,.36,1) both}
+@keyframes modalIn{from{opacity:0;transform:scale(.9) translateY(18px)}to{opacity:1;transform:scale(1) translateY(0)}}
+.modal-close{position:absolute;top:14px;right:14px;width:30px;height:30px;border-radius:50%;background:rgba(255,255,255,.07);border:none;cursor:pointer;color:rgba(255,255,255,.45);font-size:15px;display:flex;align-items:center;justify-content:center;transition:background .2s}
+.modal-close:hover{background:rgba(255,255,255,.15)}
+.modal-bar{height:3px;border-radius:100px;background:linear-gradient(90deg,rgba(255,165,0,.2),rgba(255,165,0,.9),rgba(255,165,0,.2));margin-bottom:20px;animation:barPulse 1.4s ease-in-out infinite}
+@keyframes barPulse{0%,100%{transform:scaleX(.3);opacity:.5}50%{transform:scaleX(1);opacity:1}}
+.modal-icon{width:52px;height:52px;border-radius:50%;background:rgba(255,165,0,.12);display:flex;align-items:center;justify-content:center;margin:0 auto 14px;border:1px solid rgba(255,165,0,.25)}
+.modal-icon svg{width:22px;height:22px;stroke:rgba(255,165,0,.85);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.modal-h{font-family:var(--g);font-size:20px;font-weight:900;color:#fff;margin-bottom:8px;letter-spacing:-.02em}
+.modal-p{font-size:13px;font-weight:300;color:rgba(255,255,255,.45);line-height:1.78;margin-bottom:24px}
+.modal-p strong{color:rgba(255,165,0,.85);font-weight:600}
+.modal-btns{display:flex;gap:9px;flex-wrap:wrap;justify-content:center}
+.modal-btn{display:inline-flex;align-items:center;gap:7px;padding:11px 20px;border-radius:100px;font-family:var(--g);font-size:12px;font-weight:700;text-decoration:none;transition:opacity .2s}
+.modal-btn:hover{opacity:.85}
+.mb-wa{background:#25D366;color:#fff}
+.mb-mail{background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.15);color:#fff}
+
+/* ═══ REVEAL ═══ */
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease}
+.reveal.in{opacity:1;transform:translateY(0)}
+.rd1{transition-delay:.06s}.rd2{transition-delay:.12s}.rd3{transition-delay:.18s}
+
+/* ═══ RESPONSIVE ═══ */
+@media(max-width:900px){
+  .nav-links{display:none}.ham{display:flex}
+  .dept-grid,.dept-grid-2{grid-template-columns:1fr 1fr}
+  .trust-grid{grid-template-columns:repeat(3,1fr)}
+  .connect-inner{grid-template-columns:1fr;gap:36px}
+  .testi-grid{grid-template-columns:1fr 1fr}
+  .fr{text-align:left}
+  .hs{gap:18px}.hst{border-right:none;padding-right:0;margin-right:0}
+}
+@media(max-width:640px){
+  .dept-grid,.dept-grid-2{grid-template-columns:1fr}
+  .trust-grid{grid-template-columns:repeat(2,1fr)}
+  .testi-grid{grid-template-columns:1fr}
+  .hc{flex-direction:column}
+  .hc-btn{justify-content:center}
+  .web-strip-inner{flex-direction:column;text-align:center}
+}
